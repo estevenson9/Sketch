@@ -74,14 +74,14 @@ function drawGrid(gridsize, container) {
       container.addEventListener("mousedown", () => {
         gridSquare.addEventListener("mouseenter", colorIn);
       });
-      container.addEventListener("ontouchstart", () => {
-        gridSquare.addEventListener("ontouchmove", colorIn);
+      container.addEventListener("touchstart", () => {
+        gridSquare.addEventListener("touchmove", colorIn);
       });
       container.addEventListener("mouseup", () => {
         gridSquare.removeEventListener("mouseenter", colorIn);
       });
-      container.addEventListener("ontouchend", () => {
-        gridSquare.removeEventListener("ontouchmovE", ColorIn);
+      container.addEventListener("touchend", () => {
+        gridSquare.removeEventListener("touchmove", ColorIn);
       });
       gridSquare.className = `grid-square`;
       gridSquare.id = `grid-${colNum + 16 * rowNum}`;
