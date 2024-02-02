@@ -15,8 +15,12 @@
 
 .grid-row {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-square {
   text-align: center;
+  border-width: 0.1px;
+  border-style: solid;
 }
