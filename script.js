@@ -1,9 +1,10 @@
 "use strict";
-const mainContent = document.querySelector(".main-content");
+const attachPoint = document.querySelector(".attach-point");
 const gridSizeInput = document.querySelector("#grid-size");
 const colorChoice = document.querySelector("#color-picker");
 let SIZE_OF_GRID = 16;
 let gridContainer = document.createElement("div");
+gridContainer.className = "grid-container";
 drawGrid(SIZE_OF_GRID, gridContainer);
 
 gridSizeInput.addEventListener("input", () => {
@@ -11,8 +12,8 @@ gridSizeInput.addEventListener("input", () => {
   if (SIZE_OF_GRID > 64 || SIZE_OF_GRID < 16) {
     SIZE_OF_GRID = 16;
   }
-  if (mainContent.contains(gridContainer)) {
-    mainContent.removeChild(gridContainer);
+  if (attachPoint.contains(gridContainer)) {
+    attachPoint.removeChild(gridContainer);
   }
   gridContainer = document.createElement("div");
   gridContainer.className = "grid-container";
@@ -41,11 +42,13 @@ function drawGrid(gridsize, container) {
       });
       gridSquare.className = `grid-square`;
       gridSquare.id = `grid-${colNum + 16 * rowNum}`;
-      gridSquare.style.cssText = `width: ${800 / gridsize}px;
-      height: ${800 / gridsize}px; user-select: none;`;
+      gridSquare.style.cssText = `
+      height: min((${80 / gridsize}vh),(${80 / gridsize}vw)); min-height: ${
+        300 / gridsize
+      }px`;
       gridRow.appendChild(gridSquare);
     }
     container.appendChild(gridRow);
   }
-  mainContent.appendChild(container);
+  attachPoint.appendChild(container);
 }

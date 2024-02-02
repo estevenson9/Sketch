@@ -2,8 +2,13 @@
   box-sizing: border-box;
   margin: 0;
 }
+html {
+  min-height: 300px;
+  min-width: 300px;
+}
 .main-content {
   text-align: center;
+  background-color: cornflowerblue;
 }
 
 .grid-container {
@@ -11,6 +16,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-style: outset;
+  border-color: bisque;
+  border-width: 5px;
+  border-radius: 5px;
+  min-height: 300px;
+  height: min((81vw), (81vh));
+  aspect-ratio: 1/1;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
 }
 
 .grid-row {
@@ -23,4 +38,6 @@
   text-align: center;
   border-width: 0.1px;
   border-style: solid;
+  aspect-ratio: 1/1;
+  user-select: none;
 }
