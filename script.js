@@ -2,12 +2,16 @@ const mainContent = document.querySelector(".main-content");
 const SIZE_OF_GRID = 16;
 let gridContainer = document.createElement("div");
 gridContainer.className = "grid-container";
+function hoverEffect() {
+  this.style.cssText = "background-color: blue";
+}
 
 for (let rowNum = 0; rowNum < SIZE_OF_GRID; rowNum++) {
   let gridRow = document.createElement("div");
   gridRow.className = `grid-row`;
   for (let colNum = 0; colNum < SIZE_OF_GRID; colNum++) {
     let gridSquare = document.createElement("div");
+    gridSquare.addEventListener("mouseenter", hoverEffect);
     gridSquare.textContent = `.`;
     gridSquare.className = `grid-square`;
     gridSquare.id = `grid-${colNum + 16 * rowNum}`;
