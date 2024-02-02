@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-square {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
